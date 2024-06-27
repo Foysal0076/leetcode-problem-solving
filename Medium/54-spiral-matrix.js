@@ -54,6 +54,44 @@ const spiralMatrix = (A) => {
   return ans
 }
 
+const spiralMatrixSimple = (nums) => {
+  let ans = []
+  let left = (top = 0)
+  let right = nums[0].length - 1
+  let bottom = nums.length - 1
+
+  while (left <= right && top <= bottom) {
+    //push a row to the ans array
+    for (let i = left; i <= right; i++) {
+      ans.push(nums[top][i])
+    }
+
+    //push rightmost column to the array except the previous row's last element
+    top++
+    for (let i = top; i <= bottom; i++) {
+      ans.push(nums[i][right])
+    }
+
+    // shift right to one index left and push right to left elements in the ans array
+    right--
+
+    if (top <= bottom) {
+      for (let i = right; i >= left; i--) {
+        ans.push(nums[bottom][i])
+      }
+      bottom--
+    }
+
+    if (left <= right) {
+      for (let i = bottom; i >= top; i--) {
+        ans.push(nums[i][left])
+      }
+      left++
+    }
+  }
+  return ans
+}
+
 const test1 = [1]
 const test2 = [[1, 2]]
 const test3 = [1, 2, 3, 4, 5, 6]
@@ -67,8 +105,8 @@ const test5 = [
   [8, 9, 10, 11, 12, 13, 14],
 ]
 
-console.log(spiralMatrix(test1))
-console.log(spiralMatrix(test2))
-console.log(spiralMatrix(test3))
-console.log(spiralMatrix(test4))
-console.log(spiralMatrix(test5))
+console.log(spiralMatrixSimple(test1))
+console.log(spiralMatrixSimple(test2))
+console.log(spiralMatrixSimple(test3))
+console.log(spiralMatrixSimple(test4))
+console.log(spiralMatrixSimple(test5))
