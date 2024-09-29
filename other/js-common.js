@@ -142,3 +142,4 @@ const isNumberPalindrome = (num) => {
 
 console.log(isNumberPalindrome(456))
 console.log(isNumberPalindrome(2332))
+
