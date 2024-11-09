@@ -12,8 +12,8 @@ const isPalindrome = (str) => {
   return true
 }
 
-// console.log(isPalindrome('Od o'))
-// console.log(isPalindrome('Olliu ,;o'))
+console.log(isPalindrome('Od o'))
+console.log(isPalindrome('Olliu ,;o'))
 
 const isAnagram = (str1, str2) => {
   if (str1.length !== str2.length) return false
