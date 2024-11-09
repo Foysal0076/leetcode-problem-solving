@@ -6,16 +6,16 @@
 const threeSum = function (nums) {
   const res = []
 
-  let index = 0
+  let index = 0, length = nums.length
 
   nums.sort((a, b) => a - b)
-  while (index < nums.length) {
+  while (index < length) {
     if (index > 0 && nums[index] === nums[index - 1]) {
       index++
       continue
     }
     let left = index + 1
-    let right = nums.length - 1
+    let right = length - 1
 
     while (left < right) {
       if (nums[index] + nums[left] + nums[right] > 0) {
@@ -33,6 +33,7 @@ const threeSum = function (nums) {
 
     index++
   }
+
   return res
 }
 
