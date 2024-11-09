@@ -14,14 +14,28 @@ const maxArea = function (height) {
   // }
   // return max
 
+  // let maxArea = 0
+  // let left = 0
+  // let right = height.length - 1
+  // while (left < right) {
+  //   maxArea = Math.max(
+  //     maxArea,
+  //     Math.min(height[left], height[right]) * (right - left)
+  //   )
+  //   if (height[left] > height[right]) {
+  //     right--
+  //   } else {
+  //     left++
+  //   }
+  // }
+  // return maxArea
+
   let maxArea = 0
-  let left = 0
-  let right = height.length - 1
+  let left = 0, right = height.length - 1
+
   while (left < right) {
-    maxArea = Math.max(
-      maxArea,
-      Math.min(height[left], height[right]) * (right - left)
-    )
+    const area = Math.min(height[left], height[right]) * (right - left)
+    maxArea = Math.max(maxArea, area)
     if (height[left] > height[right]) {
       right--
     } else {
