@@ -3,10 +3,7 @@
  * @return {number}
  */
 const lengthOfLongestSubstring = (s) => {
-  // let temp = new Set()
-  // let left = 0
-  // let right = 0
-  // let maxLength = 0
+  // let left = 0, right = 0, temp = new Set(), maxLength = 0
 
   // while (right < s.length) {
   //   if (temp.has(s[right])) {
@@ -19,25 +16,27 @@ const lengthOfLongestSubstring = (s) => {
   //     temp.add(s[right])
   //     maxLength = Math.max(maxLength, right - left + 1)
   //   }
-
   //   right++
   // }
+
   // return maxLength
 
-  let i = 0
-  let res = 0
-  const map = new Map()
+  let map = new Map()
+  let left = 0
+  let right = 0
+  let maxLength = 0
 
-  for (let j = 0; j < s.length; j++) {
-    const index = map.get(s[j])
-    if (index !== undefined && index >= i) {
-      i = index + 1
+  while (right < s.length) {
+    const index = map.get(s[right])
+    if (index !== undefined && index >= left) {
+      left = index + 1
     }
-    res = Math.max(res, j - i + 1)
-    map.set(s[j], j)
+    maxLength = Math.max(maxLength, right - left + 1)
+    map.set(s[right], right)
+    right++
   }
+  return maxLength
 
-  return res
 }
 
 const test1 = 'abcabcbb'
