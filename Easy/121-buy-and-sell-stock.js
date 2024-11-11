@@ -25,6 +25,7 @@ const maxProfit = function (prices) {
     }
     right++
   }
+
   return profit
 }
 
@@ -32,7 +33,7 @@ const test1 = [7, 1, 5, 3, 6, 4]
 console.log(maxProfit(test1)) // 5
 
 const test2 = [7, 6, 4, 3, 1]
-console.log(maxProfit(test2)) // 2
+console.log(maxProfit(test2)) // 0
 
 const test3 = [7, 1, 5, 200, 4, 6, 4]
 console.log(maxProfit(test3)) // 199
