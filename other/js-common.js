@@ -143,3 +143,15 @@ const isNumberPalindrome = (num) => {
 console.log(isNumberPalindrome(456))
 console.log(isNumberPalindrome(2332))
 
+const isPrime = (num) => {
+
+  if (num <= 1) return false
+  if (num === 2) return true
+
+  for (let i = 2; i < Math.sqrt(num); i++) {
+    if (num % i === 0) return false
+  }
+
+  return true
+}
+console.log(isPrime(12))
