@@ -40,6 +40,8 @@ const isAnagram = (str1, str2) => {
 // console.log(isAnagram('helloo', 'llzheo'))
 
 const fibonacciSeries = (limit) => {
+  if (limit <= 0) return []
+  if (limit === 1) return [0]
   let ans = [0, 1]
   for (let i = 2; i < limit; i++) {
     ans[i] = ans[i - 1] + ans[i - 2]
